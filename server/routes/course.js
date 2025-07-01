@@ -9,6 +9,7 @@ router.get("/course/:id", getSingleCourse);
 router.get("/lectures/:id", isAuth, fetchLectures);
 router.get("/lecture/:id", isAuth, fetchLecture);
 router.get("/mycourse", isAuth, getMyCourses);
+router.get("/mycourse", isAuth, getMyCourses);
 
 
 export default router;

@@ -3,7 +3,7 @@ import { Courses } from "../models/Courses.js"
 import { Lecture } from "../models/Lecture.js";
 import { rm } from "fs";
 import { promisify } from "util";
-import fs from 'fs';
+import fs from "fs";
 import {User} from "../models/User.js";
 
 export const createCourse = TryCatch(async(req, res)=>{
@@ -52,7 +52,7 @@ export const addLectures = TryCatch(async (req, res) => {
 });
 
 export const deleteLecture = TryCatch(async(req, res) => {
-    const lectuere = await Lecture.findById(req.params.id);
+    const lecture = await Lecture.findById(req.params.id);
 
     rm(lecture.video, () => {
         console.log("Video deleted");
@@ -85,7 +85,7 @@ export const deleteCourse = TryCatch(async (req, res) => {
 
     await course.deleteOne();
 
-    await User.updateMany({}, { $pull: { subscription: req.params.id}});
+    await User.updateMany({}, { $pull: { subscription: req.params.id }});
 
     res.json({
         message: "Course deleted",
