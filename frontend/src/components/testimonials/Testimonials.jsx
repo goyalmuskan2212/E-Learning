@@ -1,4 +1,5 @@
-import React from 'react' 
+import React from 'react';
+import "./testimonials.css";
 
 const Testimonials = () => {
     const testimonialsData = [
