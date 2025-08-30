@@ -30,7 +30,6 @@ This platform allows **Admins** to create and manage courses with lecture videos
 - Passwords hashed with **bcrypt**.
 - JWT tokens signed and time-limited.
 - OTPs stored with expiry and auto-deletion.
-- Input validation & sanitization to prevent attacks.
 
 ---
 
