@@ -40,20 +40,7 @@ This platform allows **Admins** to create and manage courses with lecture videos
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (Mongoose ODM)
 - **Authentication:** JWT + OTP email verification (Nodemailer)
-- **Payments:** Razorpay/Stripe
-- **Deployment:** (Heroku / Vercel / AWS / Render) *(mention what you used)*
 
 ---
 
-## 🗂 Database Design
-
-**User Collection**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "hashed_password",
-  "role": "client",
-  "purchasedCourses": ["courseId1", "courseId2"]
-}
 
