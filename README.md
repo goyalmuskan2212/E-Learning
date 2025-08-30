@@ -19,7 +19,7 @@ This platform allows **Admins** to create and manage courses with lecture videos
 - Clients can browse all courses and access purchased courses.
 
 ### 💳 Payment Integration
-- Integrated **Razorpay/Stripe** for course purchase.
+- Integrated **Razorpay** for course purchase.
 - After payment, purchased course is added to user’s account.
 
 ### ⚙️ Exception Handling
