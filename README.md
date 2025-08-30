@@ -35,9 +35,9 @@ This platform allows **Admins** to create and manage courses with lecture videos
 
 ## 🛠 Tech Stack
 
-- **Frontend:** React.js (hooks, context API, responsive UI)
+- **Frontend:** React.js
 - **Backend:** Node.js, Express.js
-- **Database:** MongoDB (Mongoose ODM)
+- **Database:** MongoDB 
 - **Authentication:** JWT + OTP email verification (Nodemailer)
 
 ---
