@@ -8,7 +8,7 @@ const Testimonials = () => {
       name: "John Doe",
       position: "Student",
       message:
-        "This platform helped me learn so effectively. The courses are amazing and the instructors are top-notch.",
+        "This platform helped me learn concepts more effectively and significantly improved my understanding and confidence.",
       image:
         "https://th.bing.com/th?q=Current+Bachelor&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
     },
@@ -19,25 +19,16 @@ const Testimonials = () => {
       message:
         "I've learned more here than in any other place. The interactive lessons and quizzes make learning enjoyable.",
       image:
-        "https://th.bing.com/th/id/OIP.GKAiW3oc2TWXVEeZAzrWOAHaJF?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://www.skillmanvideogroup.com/wp-content/uploads/2024/04/happy-customer-filming-a-testimonial-1024x574.png",
     },
     {
       id: 3,
-      name: "John Doe",
+      name: "Vihaan Jain",
       position: "Student",
       message:
-        "This platform helped me learn so effectively. The courses are amazing and the instructors are top-notch.",
+        "The courses are amazing, and the instructors are top-notch, making the learning experience truly valuable and engaging.",
       image:
-        "https://th.bing.com/th?q=Current+Bachelor&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
-    },
-    {
-      id: 4,
-      name: "Jane Smith",
-      position: "Student",
-      message:
-        "I've learned more here than in any other place. The interactive lessons and quizzes make learning enjoyable.",
-      image:
-        "https://th.bing.com/th/id/OIP.GKAiW3oc2TWXVEeZAzrWOAHaJF?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://media.istockphoto.com/id/1230749818/photo/portrait-of-smiling-male-owner-of-fashion-store-standing-in-front-of-clothing-display.jpg?s=612x612&w=0&k=20&c=xoWhF-hrQcbMEPDYncHiHF8HJX2YgmYt7T-KLCPZIpY=",
     },
   ];
   return (
