@@ -40,13 +40,13 @@ export const register = TryCatch(async(req,res)=>{
 
     await sendMail(
         email,
-        "E Learning",
+        "LearnRush",
         data
     )
 
     res.status(200).json({
         message: "otp send to your mail",
-        activationToken
+        activationToken,
     })
 
 })
