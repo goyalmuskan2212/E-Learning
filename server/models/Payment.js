@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+/*import mongoose from "mongoose";
 import TryCatch from "../middlewares/TryCatch";
 
 const schema = new mongoose.Schema({
@@ -24,3 +24,4 @@ const schema = new mongoose.Schema({
 export const paymentVerification = TryCatch(async (req, res) => {
     const {} = req.body
 })
+    */

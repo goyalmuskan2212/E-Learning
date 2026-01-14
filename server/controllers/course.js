@@ -1,4 +1,4 @@
-import { instance } from "../index.js";
+/*import { instance } from "../index.js";
 import TryCatch from "../middlewares/TryCatch.js";
 import { Courses } from "../models/Courses.js";
 import { Lecture } from "../models/Lecture.js";
@@ -30,7 +30,7 @@ export const fetchLectures = TryCatch(async (req, res) => {
         return res.json({ lectures });
     }
 
-    if (!user.subscription.includes(lecture.course))
+    if (!user.subscription.includes(lectures.course))
         return res.status(400).json({
          message: "You are not subscribed to this course",
     });
@@ -124,4 +124,47 @@ export const paymentVerification = TryCatch(async (req, res) => {
         })
      }
 
+});
+*/
+import TryCatch from "../middlewares/TryCatch.js";
+import { Courses } from "../models/Courses.js";
+import { Lecture } from "../models/Lecture.js";
+import { User } from "../models/User.js";
+
+export const getAllCourses = TryCatch(async (req, res) => {
+    const courses = await Courses.find();
+    res.json({ courses });
+});
+
+export const getSingleCourse = TryCatch(async (req, res) => {
+    const course = await Courses.findById(req.params.id);
+
+    if (!course)
+        return res.status(404).json({ message: "Course not found" });
+
+    res.json({ course });
+});
+
+export const fetchLectures = TryCatch(async (req, res) => {
+    const lectures = await Lecture.find({ course: req.params.id });
+
+    // 🔓 FREE ACCESS — no subscription check
+    res.json({ lectures });
+});
+
+export const fetchLecture = TryCatch(async (req, res) => {
+    const lecture = await Lecture.findById(req.params.id);
+
+    if (!lecture)
+        return res.status(404).json({ message: "Lecture not found" });
+
+    // 🔓 FREE ACCESS — no subscription check
+    res.json({ lecture });
+});
+
+export const getMyCourses = TryCatch(async (req, res) => {
+    // Since all courses are free, user has access to all courses
+    const courses = await Courses.find();
+
+    res.json({ courses });
 });
