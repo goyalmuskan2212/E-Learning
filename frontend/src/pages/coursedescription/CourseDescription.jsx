@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import "./coursedescription.css"
 import { useNavigate, useParams } from 'react-router-dom';
 import { CourseData } from '../../context/CourseContext';
@@ -116,3 +116,66 @@ const CourseDescription = ({user}) => {
 };
 
 export default CourseDescription;
+*/
+import React, { useEffect } from 'react';
+import "./coursedescription.css";
+import { useNavigate, useParams } from 'react-router-dom';
+import { CourseData } from '../../context/CourseContext';
+import { server } from '../../main';
+import { UserData } from '../../context/UserContext';
+
+const CourseDescription = ({ user }) => {
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const { fetchCourse, course } = CourseData();
+  const { isAuth } = UserData();
+
+  useEffect(() => {
+    fetchCourse(params.id);
+  }, [params.id]);
+
+  return (
+    <>
+      {course && (
+        <div className="course-description">
+          <div className="course-header">
+            <img
+              src={`${server}/${course.image}`}
+              alt={course.title}
+              className="course-image"
+            />
+
+            <div className="course-info">
+              <h2>{course.title}</h2>
+              <p>Instructor: {course.createdBy}</p>
+              <p>Duration: {course.duration} weeks</p>
+            </div>
+          </div>
+
+          <p>{course.description}</p>
+
+          {/* FREE COURSE ACTION */}
+          {isAuth ? (
+            <button
+              onClick={() => navigate(`/course/study/${course._id}`)}
+              className="common-btn"
+            >
+              Start Learning
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate("/login")}
+              className="common-btn"
+            >
+              Login to Start
+            </button>
+          )}
+        </div>
+      )}
+    </>
+  );
+};
+
+export default CourseDescription;
+

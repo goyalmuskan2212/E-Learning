@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import "./dashboard.css";
 import { CourseData } from '../../context/CourseContext';
 import CourseCard from '../../components/coursecard/CourseCard';
@@ -19,5 +19,32 @@ const Dashboard = () => {
     </div>
   )
 }
+
+export default Dashboard;
+*/
+import React from 'react';
+import "./dashboard.css";
+import { CourseData } from '../../context/CourseContext';
+import CourseCard from '../../components/coursecard/CourseCard';
+
+const Dashboard = () => {
+  const { courses } = CourseData();
+
+  return (
+    <div className="student-dashboard">
+      <h2>Available Courses</h2>
+
+      <div className="dashboard-content">
+        {courses && courses.length > 0 ? (
+          courses.map((e) => (
+            <CourseCard key={e._id} course={e} />
+          ))
+        ) : (
+          <p>No Courses Available</p>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Dashboard;
