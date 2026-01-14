@@ -18,7 +18,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = process.env.PORT;
+//const port = process.env.PORT;
+const port = process.env.PORT || 5000;
+
 
 app.get("/", (req, res) => {
     res.send("server is working");
@@ -36,7 +38,8 @@ app.use("/api", userRoutes);
 app.use("/api", courseRoutes);
 app.use("/api", adminRoutes);
 
+connectDb();
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-    connectDb();
 });
